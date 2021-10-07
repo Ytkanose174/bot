@@ -1,0 +1,33 @@
+import random
+
+print('Здравствуй игрок! Перед тобой 3 двери. В какую войдешь?')
+
+a = input()
+lvl = 0
+while True:
+    if int(a) == 1:
+        print('Тут пусто, выбери другую дверь')
+        a = input()
+    elif int(a) == 2:
+        print('Тут пусто, выбери другую дверь')
+        a = input()
+    elif int(a) == 3:
+        print('Перед вами монстр. 1 - сражаться, 2- бежать')
+        b = input()
+        if int(b) == 1:
+            print('Вы сразились')
+            if random.random()*100+lvl>35:
+                print('Вы победили!')
+                lvl = lvl+2
+                break
+            else:
+                print('Вы проиграли..')
+                break
+        if int(b) == 2:
+            print('Вы убежали')
+            lvl = lvl+1
+            break
+    else:
+        print('Неправильное число. Выбери другое')
+        a = input()
+print('Game Over')
